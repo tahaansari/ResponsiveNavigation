@@ -1,0 +1,47 @@
+html,body{
+	width: 100%;
+	height: 100%;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	outline: none;
+	box-sizing: border-box;
+}
+
+.ta-container{
+	margin: 0 auto;
+	padding: 0 15px;
+	border: 1px solid black;
+}
+
+
+/*for iphone 5s*/	
+@media(min-width: 320px){}
+
+/*for mobile*/
+@media(min-width: 480px){}
+
+/*for tablet*/
+@media(min-width: 768px){
+	.ta-container{
+		width: 750px;
+	}	
+}
+
+/*for large tablet*/
+@media(min-width: 992px){
+
+	.ta-container{
+		width: 970px;
+	}	
+}
+
+/*for large resolution*/
+@media(min-width: 1200px){
+
+	.ta-container{
+		width: 1170px;
+	}	
+}
