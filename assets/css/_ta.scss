@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+html,
+body {}
+
+// after css
+nav:after,
+nav ul:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+img {
+    max-width: 100%;
+}
+
+nav {
+    position: relative;
+    background: #000;
+    color: #fff;
+    .logo {
+        float: left;
+    }
+    ul {
+        float: left;
+        li {
+            list-style: none;
+            float: left;
+            a {
+                color: #fff;
+            }
+            @media(max-width: 480px) {
+                width: calc(100% - 20px);
+            }
+        }
+        @media(max-width: 480px) {
+            transition: 0.4s ease-out;
+            transform: translateX(-110%);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: #000;
+            box-shadow: 0 0 30px #000;
+            &.active {
+                transform: translateX(0);
+            }
+        }
+    }
+    .ham-container {
+        display: none;
+        float: right;
+        .hamburger {
+            width: 25px;
+            height: 20px;
+            position: relative;
+        }
+        span {
+            transition: 0.4s ease-out;
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: #fff;
+            &:nth-child(1) {
+                top: 0;
+            }
+            &:nth-child(2) {
+                top: 9px;
+                transform:scale(1);
+            }
+            &:nth-child(3) {
+                top: 18px;
+            }
+        }
+        &.active {
+
+            span {
+                &:nth-child(1) {
+                    top: 9px;
+                    transform: rotate(135deg);
+                }
+                &:nth-child(2) {
+                    transform:scale(0);
+                }
+                &:nth-child(3) {
+                    top: 9px;
+                    transform: rotate(-135deg);
+                }
+            }
+        }
+        @media(max-width: 480px) {
+            display: block;
+        }
+    }
+}
