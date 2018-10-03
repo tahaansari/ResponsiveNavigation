@@ -6,6 +6,11 @@ $(document).ready(function(){
 		$(this).toggleClass('active');
         $('nav ul').toggleClass('active');
         
-	})		
+	})
+
+	$('.dropdown a').click(function(){
+		$(this).parent().toggleClass('drop-open');
+		$(this).next('ul').slideToggle();
+	})
 
 })
