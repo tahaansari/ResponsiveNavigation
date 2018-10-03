@@ -5,9 +5,6 @@
     box-sizing: border-box;
 }
 
-html,
-body {}
-
 // after css
 nav:after,
 nav ul:after {
@@ -99,4 +96,8 @@ nav {
             display: block;
         }
     }
+}
+
+.text{
+    font-size: 24px;
 }
