@@ -2,10 +2,12 @@ $(document).ready(function(){
 	console.log('doc is ready');
 
 	$('.ham-container').click(function(){
-
-		$(this).toggleClass('active');
-        $('nav ul').toggleClass('active');
-        
+		// $(this).toggleClass('active');
+        $('.ul-container').toggleClass('active');
+	})
+	$('.close').click(function(){
+		// $(this).toggleClass('active');
+        $('.ul-container').toggleClass('active');
 	})
 
 	$('.dropdown a').click(function(){
