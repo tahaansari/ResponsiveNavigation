@@ -3,11 +3,13 @@ $(document).ready(function(){
 
 	$('.ham-container').click(function(){
 		// $(this).toggleClass('active');
-        $('nav>ul').toggleClass('active');
+        $('nav>ul').addClass('active');
+        $('nav .close').delay(100).fadeIn('slow');
 	})
 	$('.close').click(function(){
 		// $(this).toggleClass('active');
-        $('nav>ul').toggleClass('active');
+        $('nav>ul').removeClass('active');
+        $('nav .close').hide();
 	})
 
 	$('.dropdown a').click(function(){
