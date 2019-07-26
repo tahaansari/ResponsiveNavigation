@@ -1,59 +1,78 @@
 <!DOCTYPE html>
 <html>
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Responsive Navigation</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="assets/css/_ta.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/ta.min.css">
 </head>
-
 <body>
-    <nav>
-        <div class="ham-container">
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+    <nav class="navigation">
+        <div class="navigation__menu">
+            <img src="https://image.flaticon.com/icons/svg/462/462998.svg" alt="menu">
         </div>
-        <h1 class="logo">logo</h1>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Us</a></li>
-            <li class="dropdown">
-                <a href="#">Portfolio </a>
-                <ul>
-                    <li><a href="#">Level 1</a></li>
-                    <li><a href="#">Level 1</a></li>
-                    <li class="dropdown">
-                        <a href="#">Level 1</a>
-                        <ul>
-                            <li><a href="#">Level 2</a></li>
-                            <li><a href="#">Level 2</a></li>
-                            <li class="dropdown">
-                                <a href="#">Level 2</a>
-                                <ul>
-                                    <li><a href="#">Level 3</a></li>
-                                    <li><a href="#">Level 3</a></li>
-                                    <li><a href="#">Level 3</a></li>
-                                    <li><a href="#">Level 3</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">Level 2</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Level 1</a></li>
-                </ul>
-            </li>
-            <li><a href="#">Contact Us</a></li>
-        </ul>
-        <span class="close">
-            <i></i>
-        </span>
+        <a class="navigation__logo" href="#">
+            <img src="http://via.placeholder.com/100x50" alt="logo">
+        </a>
+        <div class="navigation__mobile">
+            <div class="navigation__close">
+                <img src="https://image.flaticon.com/icons/svg/126/126497.svg" alt="close">
+            </div>
+            <ul class="navigation__list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li class="navigation__dropdown">
+                    <a href="#">Portfolio </a>
+                    <ul>
+                        <li><a href="#">Level 1</a></li>
+                        <li><a href="#">Level 1</a></li>
+                        <li class="navigation__dropdown">
+                            <a href="#">Level 1</a>
+                            <ul>
+                                <li><a href="#">Level 2</a></li>
+                                <li><a href="#">Level 2</a></li>
+                                <li class="navigation__dropdown">
+                                    <a href="#">Level 2</a>
+                                    <ul>
+                                        <li><a href="#">Level 3</a></li>
+                                        <li><a href="#">Level 3</a></li>
+                                        <li><a href="#">Level 3</a></li>
+                                        <li><a href="#">Level 3</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Level 2</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Level 1</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
     </nav>
-
-    <script type="text/javascript" src="assets/js/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="assets/js/ta.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous">
+    </script>
+    <script>
+        $(document).ready(function(){
+            // console.log('doc is ready');
+            if($(window).width()<480){
+                $('.navigation__menu').click(function(){
+                    $('.navigation__mobile').animate({left:0},500);
+                })
+                $('.navigation__close').click(function(){
+                    $('.navigation__mobile').animate({left:'-100%'},500);
+                })
+                $('.navigation__dropdown>a').click(function(){
+                    $(this).toggleClass('right--arrow');
+                    $(this).next().slideToggle();
+                })
+            }
+        })
+    </script>
 </body>
-
 </html>
